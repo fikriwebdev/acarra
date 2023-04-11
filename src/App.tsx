@@ -103,9 +103,9 @@ const SelectedServiceForm = () => {
           borderColor="#D3DEE9"
           _placeholder={{
             color: "#D3DEE9",
-            fontSize: "30px",
           }}
           py="8"
+          fontSize="30px"
         />
       </FormControl>
       <FormControl>
@@ -117,8 +117,8 @@ const SelectedServiceForm = () => {
           borderColor="#D3DEE9"
           _placeholder={{
             color: "#D3DEE9",
-            fontSize: "30px",
           }}
+          fontSize="30px"
           py="8"
         />
       </FormControl>
@@ -249,6 +249,7 @@ const TermConditions = () => {
               borderWidth: "3px",
             },
           }}
+          colorScheme="brand"
         />
       </Box>
       <Text fontSize="26px" fontWeight="500" color="#718096">

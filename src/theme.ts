@@ -16,4 +16,12 @@ const colors = {
   },
 };
 
-export const theme = extendTheme({ colors });
+export const theme = extendTheme({
+  colors,
+  fonts: {
+    fonts: {
+      heading: `'Noto Sans', sans-serif`,
+      body: `'Noto Sans', sans-serif`,
+    },
+  },
+});

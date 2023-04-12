@@ -17,7 +17,6 @@ export default function CustomRadio(
         cursor="pointer"
         borderWidth="1px"
         borderRadius="12px"
-        h="100px"
         bg="#EDF2F7"
         _checked={{
           bg: "white",
@@ -30,7 +29,6 @@ export default function CustomRadio(
         }}
         px={5}
         py={3}
-        fontSize="30px"
         fontWeight="600"
         color="#262626"
         textAlign="center"

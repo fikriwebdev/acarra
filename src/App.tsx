@@ -23,25 +23,20 @@ import { Checkbox } from "@chakra-ui/checkbox";
 
 const Header = () => {
   return (
-    <Box backgroundColor="#262626" w="full" h="218px">
-      <HStack pt="34px" pb="47px" px="50px" alignItems="flex-start">
-        <Heading
-          as="h1"
-          color="white"
-          fontSize="50px"
-          fontWeight="700"
-          lineHeight="68.1px"
-        >
+    <Box
+      backgroundColor="#262626"
+      w="full"
+      position="fixed"
+      top="0"
+      zIndex={10}
+      p="4"
+    >
+      <HStack px="4" alignItems="flex-start" justifyContent="space-between">
+        <Heading as="h1" color="white" fontWeight="700">
           Choose the form of payment
         </Heading>
         <Box pt="3.5">
-          <Icon
-            as={IoCloseOutline}
-            w="40px"
-            h="40px"
-            color="white"
-            fill="white"
-          />
+          <Icon as={IoCloseOutline} w="6" h="6" color="white" fill="white" />
         </Box>
       </HStack>
     </Box>
@@ -56,36 +51,30 @@ const UserCard = () => {
       borderColor="#D3DEE9"
       borderRadius="20px"
       bg="#F7FAFC"
-      py="37px"
-      pl="39px"
-      pr="41px"
+      p="4"
     >
       <HStack justifyContent="space-between">
         <HStack spacing="26px">
           <Avatar
             name="John"
             bg="#EDF2F7"
-            w="90px"
-            h="90px"
             sx={{
               "& > div": {
-                fontSize: "50px",
+                fontSize: "20px",
                 color: "#262626",
               },
             }}
           />
           <Box>
-            <Heading as="h1" fontSize="40px" fontWeight="600">
+            <Heading as="h1" fontSize="lg" fontWeight="600">
               John
             </Heading>
-            <Text as="h1" fontSize="26px" fontWeight="500" color="#718096">
+            <Text as="h1" fontWeight="500" color="#718096">
               (88) 99602-2404
             </Text>
           </Box>
         </HStack>
-        <Button h="90px" w="142px" fontSize="26px">
-          Log out
-        </Button>
+        <Button>Log out</Button>
       </HStack>
     </Box>
   );
@@ -93,33 +82,25 @@ const UserCard = () => {
 
 const SelectedServiceForm = () => {
   return (
-    <Stack mt="40px" spacing="40px">
+    <Stack mt="4" spacing="4">
       <FormControl>
-        <FormLabel fontSize="30px" fontWeight="600" mb="20px">
-          Enter your location
-        </FormLabel>
+        <FormLabel fontWeight="600">Enter your location</FormLabel>
         <Input
           placeholder="Enter address"
           borderColor="#D3DEE9"
           _placeholder={{
             color: "#D3DEE9",
           }}
-          py="8"
-          fontSize="30px"
         />
       </FormControl>
       <FormControl>
-        <FormLabel fontSize="30px" fontWeight="600" mb="20px">
-          Note (optional)
-        </FormLabel>
+        <FormLabel fontWeight="600">Note (optional)</FormLabel>
         <Input
           placeholder="Enter text here"
           borderColor="#D3DEE9"
           _placeholder={{
             color: "#D3DEE9",
           }}
-          fontSize="30px"
-          py="8"
         />
       </FormControl>
     </Stack>
@@ -128,8 +109,8 @@ const SelectedServiceForm = () => {
 
 const SelectedService = () => {
   return (
-    <Box mt="50px">
-      <Heading as="h1" mb="40px" fontSize="40px" fontWeight="700">
+    <Box mt="8">
+      <Heading as="h1" mb="4" size="lg" fontWeight="700">
         Selected service
       </Heading>
       <Box
@@ -137,14 +118,12 @@ const SelectedService = () => {
         borderWidth="1px"
         borderColor="#D3DEE9"
         borderRadius="20px"
-        py="37px"
-        pl="39px"
-        pr="41px"
+        p="4"
       >
-        <HStack spacing="24px">
-          <Image src={japanImage} w="120px" h="120px" borderRadius="12px" />
-          <Stack spacing="12px">
-            <Heading as="h1" fontSize="30px" fontWeight="600">
+        <HStack spacing="4">
+          <Image src={japanImage} w="20" h="20" borderRadius="12px" />
+          <Stack>
+            <Heading as="h1" size="md" fontWeight="600">
               Japanese lessons
             </Heading>
             <HStack>
@@ -160,7 +139,7 @@ const SelectedService = () => {
                   fill="#718096"
                 />
               </svg>
-              <Text fontSize="20px" fontWeight="500" color="#718096">
+              <Text fontWeight="500" color="#718096" fontSize="sm">
                 Nov 7, 2020 · 11:30
               </Text>
             </HStack>
@@ -179,11 +158,11 @@ const SelectedService = () => {
                 <circle cx="12" cy="10.5" r="1.5" fill="#718096" />
               </svg>
 
-              <Text fontSize="20px" fontWeight="500" color="#718096">
+              <Text fontWeight="500" color="#718096" fontSize="sm">
                 Client`s place
               </Text>
             </HStack>
-            <Text fontWeight="600" fontSize="30px">
+            <Text fontWeight="600" fontSize="xl">
               Rp. 350.000
             </Text>
           </Stack>
@@ -219,10 +198,10 @@ const PayOptions = () => {
   const group = getRootProps();
   return (
     <Box mt="40px">
-      <Heading as="h1" mb="40px" fontSize="50px" fontWeight="700">
+      <Heading as="h1" mb="4" size="lg" fontWeight="700">
         Choose a way to pay
       </Heading>
-      <SimpleGrid columns={2} gap="20px" {...group}>
+      <SimpleGrid columns={2} gap="4" {...group}>
         {options.map((value) => {
           const radio = getRadioProps({ value: value.value });
           return (
@@ -238,21 +217,11 @@ const PayOptions = () => {
 
 const TermConditions = () => {
   return (
-    <HStack mt="50px" spacing="25px" alignItems="flex-start">
+    <HStack mt="8" spacing="4" alignItems="flex-start" mb="8">
       <Box pt="2.5">
-        <Checkbox
-          sx={{
-            "& .chakra-checkbox__control": {
-              width: "30px",
-              height: "30px",
-              borderColor: "#616161",
-              borderWidth: "3px",
-            },
-          }}
-          colorScheme="brand"
-        />
+        <Checkbox colorScheme="brand" />
       </Box>
-      <Text fontSize="26px" fontWeight="500" color="#718096">
+      <Text fontWeight="500" color="#718096">
         Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit,{" "}
         <Link color="#1E21FF" textDecoration="underline">
           sed do eiusmod
@@ -264,65 +233,45 @@ const TermConditions = () => {
 
 const Footer = () => {
   return (
-    <Center position="absolute" left="0" right="0" w="full" bottom="0">
-      <Box
+    <Center position="fixed" left="0" right="0" w="full" bottom="0" bg="white">
+      <HStack
         w="full"
-        h="160px"
-        px="50px"
-        py="30px"
+        p="4"
         borderTopWidth="1px"
         borderTopColor="#D3DEE9"
-        maxW="750px"
+        h="20"
+        alignItems="center"
       >
-        <HStack justifyContent="space-between">
+        <HStack justifyContent="space-between" w="full">
           <Button
             colorScheme="brand"
-            h="100px"
-            width="240px"
-            fontSize="30px"
             variant="unstyled"
             textAlign="left"
+            size="lg"
           >
             Previous
           </Button>
-          <Button
-            colorScheme="brand"
-            h="100px"
-            width="240px"
-            fontSize="30px"
-            borderRadius="12px"
-          >
+          <Button colorScheme="brand" size="lg">
             Continue
           </Button>
         </HStack>
-      </Box>
+      </HStack>
     </Center>
   );
 };
 
 function App() {
   return (
-    <Center>
-      <Container
-        centerContent
-        maxW="750px"
-        m="20px"
-        pb="300px"
-        position="relative"
-        border="1px"
-        borderColor="gray.200"
-        px="0"
-      >
-        <Header />
-        <Box mt="50px" w="full" px="50px">
-          <UserCard />
-          <SelectedService />
-          <PayOptions />
-          <TermConditions />
-        </Box>
-        <Footer />
-      </Container>
-    </Center>
+    <Container centerContent position="relative" px="0">
+      <Header />
+      <Box w="full" px="4" mb="100px" mt="140px">
+        <UserCard />
+        <SelectedService />
+        <PayOptions />
+        <TermConditions />
+      </Box>
+      <Footer />
+    </Container>
   );
 }
 
